@@ -1,7 +1,12 @@
 pipeline{
 	agent any
+	
 	stages{
-	   stage ('Build'){
+	    stage('Git Pull') {
+            steps {
+                git branch: 'test-1.1', credentialsId: '803bec61-4c29-4e1c-ae0d-63b9ff9bb0bd', url: 'https://github.com/meghag9/RollbackProject.git'
+				  }
+		stage ('Build'){
 			steps{
 				sh 'mvn clean package'}
 				}
