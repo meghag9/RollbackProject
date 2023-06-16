@@ -9,7 +9,7 @@ pipeline{
 				  
 		stage ('Build'){
 			steps{
-				bat 'mvn clean package' }
+				echo 'mvn clean package' }
 				}
 				
 		stage ('Deploy to tomcat server') {
