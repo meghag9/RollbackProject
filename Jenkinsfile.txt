@@ -20,12 +20,10 @@ pipeline{
 		post{
 			always{ 
 			echo "Archiving the Artifacts"
-				  }
-			}archiveArtifacts artifacts: **/target/*.war
-			
-			}
+			archiveArtifacts artifacts: '**/target/*.war'
+			 }
 		 }
 				
 		}
 	 }
-
+}
