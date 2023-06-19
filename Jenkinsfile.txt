@@ -18,8 +18,8 @@ pipeline{
 		   }
 				
 		{ 
-		stage{
-			success{
+		post{
+			always{ 
 			echo "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/target/*.war'
 			 }
