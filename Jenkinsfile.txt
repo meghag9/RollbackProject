@@ -23,7 +23,7 @@ pipeline{
                 echo 'exit 0'
             }
 					 }
-				
+			{	
 		post{
 			always{ 
 			echo "Archiving the Artifacts"
