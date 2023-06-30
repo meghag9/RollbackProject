@@ -12,11 +12,6 @@ pipeline{
 			steps{
 				echo 'mvn clean package' }
 				       }
-		stage('one') {
-            steps {
-                echo 'exit 0'
-            }
-					 }
 				
 		stage ('Deploy to tomcat server') {
 			steps{
