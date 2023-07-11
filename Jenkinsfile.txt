@@ -12,6 +12,17 @@ pipeline{
 			steps{
 				echo 'mvn clean package' }
 				}
+		stage ('trigger build number (130)'){
+			steps{
+				build 'build number (130)'
+			}
+		}
+		
+		stage('after build number (130)'){
+			steps{
+				echo 'back after build number (130) completion'
+				}
+			}
 
 				
 		stage ('Deploy to tomcat server') {
