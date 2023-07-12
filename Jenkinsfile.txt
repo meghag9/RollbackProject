@@ -27,7 +27,7 @@ pipeline{
 				echo 'back after build-n-deploy completion'
 				}
 			}
-				
+		{		
 		post{
 			always{ 
 			echo "Archiving the Artifacts"
@@ -36,5 +36,6 @@ pipeline{
 			}
 				
 		  }
-		}	
+		}
+	}
 	
