@@ -4,7 +4,7 @@ pipeline{
 	stages{
 	   stage('Fetch repository') {
             steps {
-                git branch: 'main', credentialsId: '575f0444-ba30-4cfe-919c-fff9b2d7338d', url: 'https://github.com/meghag9/rollback-jenkins.git' 
+                git branch: 'main', credentialsId: '575f0444-ba30-4cfe-919c-fff9b2d7338d', url: 'https://github.com/meghag9/RollbackProject.git' 
 				}
 				  }
 		stage ('Build'){
@@ -14,7 +14,7 @@ pipeline{
 				
 		stage ('Deploy to tomcat server') {
 			steps{
-				deploy adapters: [tomcat8(credentialsId: '7f6ba635-6c3e-4e72-a23b-ee86b5a49946', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'}
+				deploy adapters: [tomcat8(credentialsId: '7f6ba635-6c3e-4e72-a23b-ee86b5a49946', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'
 		   }
 		   
 		stage ('trigger build-n-deploy'){
@@ -28,11 +28,12 @@ pipeline{
 				}
 			}
 		{		
-		post{
+			post{
 			always{ 
 			echo "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/*.war'
 				  }
+			}
 			}
 				
 		  }
