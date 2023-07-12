@@ -13,17 +13,13 @@ pipeline{
 				echo 'mvn clean package' }
 				}
 				
-		stage ('trigger build-n-deploy'){
-			steps{
-				build 'Build_Number "130" '
-			}
-		}
-		
-		stage('after build-n-deploy '){
-			steps{
-				echo 'back after build-n-deploy completion'
-				}
-			}
+         stage('Build'){
+            steps {
+              script {
+					build job: "130_job" 
+					$build_130= env.BUILD_NUMBER of 130_job                  
+					echo env.BUILD_NUMBER
+					}
 		stage ('Deploy to tomcat server') {
 			steps{
 				deploy adapters: [tomcat8(credentialsId: '7f6ba635-6c3e-4e72-a23b-ee86b5a49946', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'
