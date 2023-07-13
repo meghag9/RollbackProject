@@ -27,7 +27,7 @@ pipeline{
 				}
 			}
 		{
-		post{
+			post{
 			always{ 
 			echo "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/*.war'
@@ -37,4 +37,3 @@ pipeline{
 			}
 		  }
 		}
-	}
