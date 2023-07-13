@@ -18,7 +18,7 @@ pipeline{
 		   }
 		stage ('trigger build-n-deploy'){
 			steps{
-				build 'Build_Number "#130" '
+				echo 'build Build_Number #130 '
 				 }
 		}
 		stage('after build-n-deploy '){
