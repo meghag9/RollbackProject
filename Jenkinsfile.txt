@@ -23,7 +23,7 @@ pipeline{
 			}		
 		stage ('Deploy to tomcat server'){
 			steps{
-				deploy adapters: [tomcat8(credentialsId: '37a25924-ae65-4ea5-ba36-25c3c4d82d87', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'
+				deploy adapters: [tomcat8(credentialsId: '660ab8aa-071b-47f9-ac52-ff5ad115afef', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'
 		   }
 				
 		post{
