@@ -19,8 +19,13 @@ pipeline{
 		   }
 		stage ('trigger build-n-deploy'){
 			steps{
-				echo 'build previousBuild.number #197'
+				echo 'build previousBuild.number #130'
 				 }
+		}
+		stage('after build-n-deploy'){
+			steps{
+				echo 'back after build-n-deploy completion'
+				}
 			}
 		{
 		post{
