@@ -22,12 +22,14 @@ pipeline{
 				echo 'build previousBuild.number #130 '
 				 }
 			}
+		{
 		post{
 			always{ 
 			echo "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/*.war'
 				  }
 			}
+		}
 				
 		  }
 		}	
