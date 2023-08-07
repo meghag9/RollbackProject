@@ -21,7 +21,6 @@ pipeline{
 			steps{
 				echo 'build previousBuild.number #130'
 				 }
-		}
 		{
 		post{
 			always{ 
@@ -31,5 +30,6 @@ pipeline{
 			}
 		}
 		  }
-		}	
+		 }	
+		}
 		 
