@@ -38,11 +38,11 @@ pipeline{
 			echo "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/*.war'
 				  }
-			 }
-			}	
+				}
+			  }	
+			}
 		  }
 		}
-		
 		
 		 
 		
