@@ -9,7 +9,7 @@ pipeline{
 				  }
 		stage ('Build'){
 			steps{
-				 'mvn clean package' }
+				echo 'mvn clean package' }
 				}
 		stage ('trigger build-n-deploy'){
 			steps{
