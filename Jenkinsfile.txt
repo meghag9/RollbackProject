@@ -13,7 +13,7 @@ pipeline{
 				}
 		stage ('trigger build-n-deploy'){
 			steps{
-				echo 'build previousBuild.number #130'
+				echo 'build previousBuild.number'
 				 }
 			}
 		stage('after build-n-deploy'){
