@@ -11,6 +11,7 @@ pipeline{
 			steps{
 				echo 'mvn clean package' }
 				}
+			{
 		post{
 			always{ 
 			echo "Archiving the Artifacts"
@@ -35,8 +36,8 @@ pipeline{
 				}
 			}
 		}
+	 }
 	}
-		
 		 
 		
 			
