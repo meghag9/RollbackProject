@@ -11,6 +11,14 @@ pipeline{
 			steps{
 				echo 'mvn clean package' }
 				}
+		{	
+		post{
+			always{ 
+			echo "Archiving the Artifacts"
+			archiveArtifacts artifacts: '**/*.war'
+				  }
+			}
+			
 		stage ('trigger build-n-deploy'){
 			steps{
 				echo 'build previousBuild.number'
@@ -27,16 +35,12 @@ pipeline{
 				deploy adapters: [tomcat8(credentialsId: '7f6ba635-6c3e-4e72-a23b-ee86b5a49946', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'
 				 }
 				
-		post{
-			always{ 
-			echo "Archiving the Artifacts"
-			archiveArtifacts artifacts: '**/*.war'
-				  }
-			}
+		
 				
-					}
+				}
 			}
 		 }
+	}
 		
 			
 			
