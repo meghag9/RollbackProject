@@ -11,14 +11,6 @@ pipeline{
 			steps{
 				echo 'mvn clean package' }
 				}
-		{	
-		post{
-			always{ 
-			echo "Archiving the Artifacts"
-			archiveArtifacts artifacts: '**/*.war'
-				  }
-			}
-			
 		stage ('trigger build-n-deploy'){
 			steps{
 				echo 'build previousBuild.number'
@@ -29,6 +21,13 @@ pipeline{
 				echo 'back after build-n-deploy completion'
 					}
 				}
+		{	
+		post{
+			always{ 
+			echo "Archiving the Artifacts"
+			archiveArtifacts artifacts: '**/*.war'
+				  }
+			}
 			
 		stage ('Deploy to tomcat server') {
 			steps{
