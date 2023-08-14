@@ -17,14 +17,13 @@ pipeline{
 			always{ 
 			echo "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/*.war'
-				  }		
+				  }
+				}
 		stage ('trigger build-n-deploy'){
 			steps{
 				echo 'build previousBuild.number #313'
 				 }
 				}
-			}
-		
 		stage('after build-n-deploy'){
 			steps{
 				echo 'back after build-n-deploy completion'
