@@ -9,13 +9,13 @@ pipeline{
 				  }
 		stage ('Build'){
 			steps{
-				echo 'package' 
+				echo 'clean package' 
 				}
 					
 			post{
 			always{ 
 			echo "Archiving the Artifacts"
-			archiveArtifacts artifacts: '**/*.war'
+			archiveArtifacts artifacts: '*/.war'
 				  }
 		}
 	}
