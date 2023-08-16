@@ -9,12 +9,12 @@ pipeline{
 				  }
 		stage ('Build'){
 			steps{
-				sh 'mvn clean package'
+				bat 'mvn clean package'
 				}
 					
 			post{
 			always{ 
-			echo "Archiving the Artifacts"
+			bat "Archiving the Artifacts"
 			archiveArtifacts artifacts: '**/*.war'
 				  }
 		}
@@ -27,7 +27,7 @@ pipeline{
 
 		 stage ('trigger build-n-deploy'){
 			steps{
-				echo 'build previous.successBuild'
+				bat 'build previous.successBuild'
 				 }
 				}
 				
