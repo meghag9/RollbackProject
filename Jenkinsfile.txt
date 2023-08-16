@@ -12,8 +12,9 @@ pipeline{
 				bat 'mvn clean package' 
 				}
 				
-		catchError(message: 'bat \'mvn clean package\'') {
-		
+		stage ('Error'){
+			steps{
+		error 'bat \'mvn clean package\' '
 		}
 					
 			post{
