@@ -11,6 +11,10 @@ pipeline{
 			steps{
 				bat 'mvn clean package' 
 				}
+				
+		catchError(message: 'bat \'mvn clean package\'') {
+		
+		}
 					
 			post{
 			always{ 
