@@ -33,7 +33,7 @@ pipeline{
 				
 		stage('after build-n-deploy'){
 			steps{
-				echo 'back after build-n-deploy completion'
+				bat 'back after build-n-deploy completion'
 					}
 				}
 		stage ('rollback to tomcat server'){
