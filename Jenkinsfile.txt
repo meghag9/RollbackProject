@@ -9,13 +9,8 @@ pipeline{
 				  }
 		stage ('Build'){
 			steps{
-				bat 'mvn clean package' 
+				bat 'maven clean package'
 				}
-				
-		stage ('Error'){
-			steps{
-		error 'bat \'mvn clean package\' '
-		}
 					
 			post{
 			always{ 
@@ -23,6 +18,9 @@ pipeline{
 			archiveArtifacts artifacts: '**/*.war'
 				  }
 		}
+		
+		catchError(message: 'bat \'maven clean package\'') {
+			}
 	}
 		stage ('Deploy to tomcat server') {
 			steps{
