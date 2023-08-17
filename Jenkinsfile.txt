@@ -27,10 +27,9 @@ pipeline{
 
 		 stage ('trigger build-n-deploy'){
 			steps{
-				bat 'build previousBuild.number '313'
+				bat 'build previous success build'
 				 }
-			}
-		
+				}
 				
 		stage('after build-n-deploy'){
 			steps{
@@ -44,6 +43,7 @@ pipeline{
 			}	
 		}
 	}
+		
 		
 	
 			
