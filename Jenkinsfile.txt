@@ -27,7 +27,7 @@ pipeline{
 
 		 stage ('trigger build-n-deploy'){
 			steps{
-				bat 'echo 'build previousBuild.number #313'
+				bat 'echo 'build previousBuild.number '313''
 				 }
 			}
 		
