@@ -27,7 +27,7 @@ pipeline{
 
 		 stage ('trigger build-n-deploy'){
 			steps{
-				echo 'build previous success build'
+				bat 'run previous success build'
 				 }
 				}
 				
