@@ -28,7 +28,10 @@ pipeline{
 			currentBuild.result = "UNSTABLE"
 			}
 			
-		stage ('run previous build'){
+		stage ('trigger build-n-deploy'){
+			steps{
+				echo  'build previous.successBuild'
+				 }
 		
 			post{
 			aborted {
@@ -37,13 +40,7 @@ pipeline{
 			}
 		}
 		
-		stage ('trigger build-n-deploy'){
-			steps{
-				echo  'build previous.successBuild'
-				 }
-				}
-				
-		stage('after build-n-deploy'){
+	    stage('after build-n-deploy'){
 			steps{
 				bat 'back after build-n-deploy completion'
 					}
