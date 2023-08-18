@@ -24,11 +24,11 @@ pipeline{
 				deploy adapters: [tomcat8(credentialsId: '7f6ba635-6c3e-4e72-a23b-ee86b5a49946', path: '', url: 'http://localhost:8081/')], contextPath: 'MyFirstwebApplication.war', war: '**/*.war'
 				 }
 			}
-		stage ('mark as unstable'){
+		stage ('mark as fail'){
 			steps{
 				script{
 				  if ('build fails'){
-				  currentBuild.result = "UNSTABLE"
+				  currentBuild.result = "FAILED"
 				}
 			else {
 					build = build.previousBuild
