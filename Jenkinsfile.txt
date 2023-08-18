@@ -27,7 +27,7 @@ pipeline{
 		stage ('mark as unstable'){
 			steps{
 				script{
-				  if (build_fails){
+				  if ('build fails'){
 				  currentBuild.result = "UNSTABLE"
 				}
 			else {
