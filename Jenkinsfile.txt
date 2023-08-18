@@ -27,11 +27,11 @@ pipeline{
 		
 		stage ('trigger build-n-deploy'){
 			steps{
+				currentBuild.result = "UNSTABLE"
 				echo  'build previous.successBuild'
 				 }
-		steps{
-			currentBuild.result = "UNSTABLE"
-			}
+			
+			
 			post{
 			aborted {
 				echo "run previous successful build"
