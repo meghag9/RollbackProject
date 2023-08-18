@@ -31,12 +31,6 @@ pipeline{
 			else {
 					build = build.previousBuild
 				}
-			post{
-			success {
-					  build = build.previousBuild
-					  buildCount++
-				 }
-			}
 		}
 		
 		stage ('rollback to tomcat server'){
