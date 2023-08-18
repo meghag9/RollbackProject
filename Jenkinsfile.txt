@@ -29,7 +29,7 @@ pipeline{
 			steps{
 				echo  'build previous.successBuild'
 				 }
-		script{
+		steps{
 			currentBuild.result = "UNSTABLE"
 			}
 			post{
