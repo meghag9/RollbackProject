@@ -25,13 +25,14 @@ pipeline{
 			  }
 		   }
 	    }
-					
+			{		
 			post{
 				always{ 
 				bat "Archiving the Artifacts"
 				archiveArtifacts artifacts: '**/*.war'
 				  }
 				}
+			}
 			
 		stage ('Deploy to tomcat server') {
 			steps{
