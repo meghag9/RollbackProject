@@ -11,15 +11,10 @@ pipeline{
 			steps{
 				bat 'mvn clean package'
 					script{
-						if ('mvn build fails'){
-							currentStage.result = "FAILED"
-								}
-						else {
-							build = build.NextStage
-					 }
-				   }
-				 }
-			   }
+						 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+						 }
+					}
+				}
 		{		
 		post{
 			always{ 
