@@ -16,7 +16,7 @@ pipeline{
 		stage ('catch error'){
 				steps{
 					catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-					echo "exist Fetch repository"
+					echo "exist 1"
 					}
 				}
 			}
