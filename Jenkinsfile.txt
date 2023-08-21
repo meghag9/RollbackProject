@@ -12,7 +12,7 @@ pipeline{
 			steps{
 				bat 'mvn clean package'
 				}
-				
+			}
 		stage ('mark as fail'){
 			steps{
 				script{
@@ -32,9 +32,6 @@ pipeline{
 				archiveArtifacts artifacts: '**/*.war'
 				  }
 				}
-			}
-			
-		
 			
 		stage ('Deploy to tomcat server') {
 			steps{
