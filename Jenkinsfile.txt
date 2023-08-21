@@ -31,7 +31,7 @@ pipeline{
 				  currentBuild.result = "FAILED"
 				}
 			else {
-					build = build.previousBuild
+					build = build.previousSuccessBuild
 				 }
 			  }
 		   }
