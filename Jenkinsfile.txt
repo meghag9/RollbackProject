@@ -20,7 +20,7 @@ pipeline{
 					}
 				}
 			}
-					
+			{		
 			post{
 				always{ 
 				echo "Archiving the Artifacts"
@@ -45,6 +45,7 @@ pipeline{
 		   }
 	    }
 	}
+  }
 }
 	
 		
