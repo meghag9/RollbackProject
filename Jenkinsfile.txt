@@ -15,7 +15,7 @@ pipeline{
 			post{
 				always{ 
 				echo "Archiving the Artifacts"
-				archiveArtifacts artifacts: '**/*.war'
+				archiveArtifacts artifacts: '*/*.war'
 				  }
 				}
 			}
@@ -31,7 +31,7 @@ pipeline{
 				  currentBuild.result = "FAILED"
 				}
 			else {
-					build = build.previousSuccessBuild
+					build = build.previousSuccessfulBuild
 				 }
 			  }
 		   }
