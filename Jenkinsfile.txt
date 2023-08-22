@@ -9,16 +9,15 @@ pipeline{
 				  }
 		stage ('Build'){
 			steps{
-				echo 'mvn clean package'
+				bat 'Mvn clean package'
 				}
-			}
-		
-				{		
-		post{
-			always{ 
-			echo "Archiving the Artifacts"
-			archiveArtifacts artifacts: '**/*.war'
+					
+			post{
+				always{ 
+				echo "Archiving the Artifacts"
+				archiveArtifacts artifacts: '**/*.war'
 				  }
+				}
 			}
 		stage ('Deploy to tomcat server') {
 			steps{
@@ -38,7 +37,6 @@ pipeline{
 		   }
 	    }
 	}
-  }
 }
 	
 		
