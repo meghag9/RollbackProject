@@ -12,20 +12,7 @@ pipeline{
 				echo 'mvn clean package'
 				}
 			}
-		stage ('catch error'){
-			steps{
-				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-					script{
-						try{
-							sh "exit1"
-						} catch (e){
-							echo 'send email'
-							throw e
-							}
-						}
-					}
-				}
-			}
+		
 				{		
 		post{
 			always{ 
