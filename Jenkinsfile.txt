@@ -11,7 +11,8 @@ pipeline{
 			steps{
 				bat 'mvn clean package'
 				}
-			
+			}
+		
 		stage ('catch error'){
 				steps{
 					catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
@@ -19,7 +20,6 @@ pipeline{
 					}
 				}
 			}
-		}
 			{		
 			post{
 				always{ 
