@@ -10,7 +10,7 @@
   <name>MyFirstwebApplication</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-	  < https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api >
+	  <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
