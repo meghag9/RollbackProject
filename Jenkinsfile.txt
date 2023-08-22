@@ -43,9 +43,11 @@ pipeline{
 				script{
 				  if ('build fail'){
 				  currentBuild.result = "FAILED"
+				  build = build.previouSuccessfulBuild
+				  
 				}
 			else {
-					build = build.previouSuccessfulBuild
+					buildResult : 'SUCCESS'
 				 }
 			  }
 		   }
