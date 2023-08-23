@@ -43,10 +43,9 @@ pipeline{
 				script{
 				  if ('build fail'){
 				  build = "build.PreviouSuccessfulBuild"
+				  echo 'display previousBuild.number'
 				  currentBuild.result = "FAILED"
-				 
-				  
-				}
+				 }
 			else {
 					buildResult = "SUCCESS"
 				 }
