@@ -40,7 +40,7 @@ pipeline{
 				  if ('build fail'){
 				  build = "build.previouSuccessfulBuild"
 				  currentBuild.result = "FAILED"
-				  bat 'BUILD_DISPLAY_NUMBER'
+				  build = "BUILD_DISPLAY_previouSuccessfulBuildNumber"
 				 }
 			else {
 					buildResult = "SUCCESS"
