@@ -42,13 +42,13 @@ pipeline{
 			steps{
 				script{
 				  if ('build fail'){
-				  build = build.PreviouSuccessfulBuild
+				  build = "build.PreviouSuccessfulBuild"
 				  currentBuild.result = "FAILED"
 				 
 				  
 				}
 			else {
-					buildResult : 'SUCCESS'
+					buildResult = "SUCCESS"
 				 }
 			  }
 		   }
