@@ -38,9 +38,9 @@ pipeline{
 			steps{
 				script{
 				  if ('build fail'){
-				  build = "build.PreviouSuccessfulBuild"
-				  bat '${BUILD_NUMBER}'
+				  build = "build.previouSuccessfulBuild"
 				  currentBuild.result = "FAILED"
+				  bat 'BUILD_DISPLAY_NUMBER'
 				 }
 			else {
 					buildResult = "SUCCESS"
