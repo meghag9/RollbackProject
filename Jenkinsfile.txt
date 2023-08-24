@@ -22,25 +22,16 @@ pipeline{
 		stage ('catch error'){
 			steps{
 				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-					script{
-						try{
-							sh "exit1"
-						} catch (e){
-							echo 'send email'
-							throw e
-							}
-						}
-					}
 				}
 			}
-			
+		}
 		stage ('mark as fail'){
 			steps{
 				script{
 				  if ('build fail'){
-				  build = "build.previouSuccessfulBuild"
+				  build = " build.previouSuccessfulBuild "
 				  currentBuild.result = "FAILED"
-				  build = "BUILD_DISPLAY_previouSuccessfulBuildNumber"
+				  
 				 }
 			else {
 					buildResult = "SUCCESS"
