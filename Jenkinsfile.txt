@@ -19,12 +19,7 @@ pipeline{
 				  }
 				}
 			}
-		stage ('catch error'){
-			steps{
-				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-				}
-			}
-		}
+		
 		stage ('mark as fail'){
 			steps{
 				script{
