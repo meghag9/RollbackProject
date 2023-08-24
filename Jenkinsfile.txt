@@ -11,13 +11,14 @@ pipeline{
 			steps{
 				bat 'mvn clean package'
 				}
-					}
+					
 			post{
 				always{ 
 				echo "Archiving the Artifacts"
 				archiveArtifacts artifacts: '**/*.war'
 				  }
 				}
+			}
 		
 		stage ('mark as fail'){
 			steps{
